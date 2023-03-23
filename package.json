@@ -1,0 +1,33 @@
+{
+	"name": "@k8pai/components",
+	"version": "0.0.1",
+	"description": "A collection of tailwindcss configured components that are ready to use.",
+	"main": "src/index.js",
+	"scripts": {
+		"build": "babel src --out-dir . --copy-files",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"tailwindcss",
+		"components",
+		"k8pai",
+		"Next.JS",
+		"React"
+	],
+	"author": "k8pai",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/cli": "^7.16.7",
+		"@babel/core": "^7.16.7",
+		"@babel/preset-env": "^7.16.8",
+		"@babel/preset-react": "^7.16.7"
+	},
+	"peerDependencies": {
+		"tailwindcss": "*",
+		"react": "*",
+		"react-dom": "*"
+	},
+	"dependencies": {
+		"react-icons": "^4.8.0"
+	}
+}
