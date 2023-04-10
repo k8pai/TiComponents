@@ -8,11 +8,19 @@ export default function TiText({
 	name,
 	validate,
 	label,
+	mandatory,
 	loader = false,
 	autoComplete = 'off',
 	error,
 	readOnlyText,
-	theme,
+	theme = {
+		label: 'text-black font-semibold tracking-wide mb-2',
+		input: 'font-semibold tracking-wider text-lg rounded-lg bg-transparent selection:select-none border-2',
+		default: 'border-gray-500',
+		valid: 'border-green-400',
+		invalid: 'border-red-400',
+		error: 'text-red-500 font-semibold tracking-wide',
+	},
 	...rest
 }) {
 	const [valid, setValid] = useState(null);
@@ -63,6 +71,11 @@ export default function TiText({
 			{label && (
 				<label htmlFor={name} className={`${theme.label}`}>
 					{label}
+					{mandatory && (
+						<span className="text-red-500 font-extrabold text-lg ml-2">
+							*
+						</span>
+					)}
 				</label>
 			)}
 			<div className={`relative`}>
