@@ -5,7 +5,7 @@ import { HiCheck } from 'react-icons/hi2';
 export default function TiNotifier({
 	Component = HiCheck,
 	timer = 3000,
-	message = 'Now connectable.',
+	message = 'This is Awesome.',
 	style = {},
 	animate = {},
 }) {
@@ -13,7 +13,7 @@ export default function TiNotifier({
 	const [animation, setAnimation] = useState({
 		from: 'bottom-0',
 		to: 'bottom-10',
-		anim: 'transition-all ease-out duration-300',
+		animation: 'transition-all ease-out duration-300',
 		...animate,
 	});
 	const [theme, setTheme] = useState({
@@ -25,6 +25,7 @@ export default function TiNotifier({
 		spacing: 'space-x-3',
 		font: ' font-semibold',
 		indicator: 'text-green-300',
+		componentSize: '1.5em',
 		...style,
 	});
 
@@ -43,24 +44,24 @@ export default function TiNotifier({
 			<div
 				className={`absolute left-1/2 translate-x-[-50%] ${
 					animation.from
-				} ${animation.anim} ${
+				} ${animation.animation} ${
 					visible
 						? `visible ${animation.to} opacity-100`
 						: 'invisible opacity-0'
 				}`}
 			>
 				<div
-					className={`${theme.padding} ${theme.bg} ${theme.color} ${theme.borderRadius} ${theme.border} ${theme.font} flex h-full items-center ${theme.spacing}`}
+					className={`${theme.padding} ${theme.bg} ${theme.color} ${theme.borderRadius} ${theme.border} flex h-full items-center ${theme.spacing}`}
 				>
 					<IconContext.Provider
 						value={{
-							size: '1.4em',
+							size: theme.componentSize,
 							className: `global-class-name ${theme.indicator}`,
 						}}
 					>
 						<Component />
 					</IconContext.Provider>
-					<span>{message}</span>
+					<span className={`${theme.font}`}>{message}</span>
 				</div>
 			</div>
 		</div>
