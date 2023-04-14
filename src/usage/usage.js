@@ -26,17 +26,7 @@ export const UsageTiFiles = () => {
 						</TiFiles.FileWrapper>
 
 						<div className="ml-3 mr-5">
-							<Fragment>
-								{file ? (
-									<p className="text-sm text-gray-500">
-										{file.name} | ({file.size} bytes)
-									</p>
-								) : (
-									<p className="text-sm text-gray-500">
-										{fallback}
-									</p>
-								)}
-							</Fragment>
+							<TiFiles.Info fallback="Cristiano ronaldo is the best" />
 						</div>
 					</div>
 				</>
